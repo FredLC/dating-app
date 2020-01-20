@@ -1,0 +1,28 @@
+<main *ngIf="!registerMode" role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Find that special someone</h1>
+      <p class="lead text-muted">
+        Sign up in minutes and view hundreds of potential matches!
+      </p>
+      <p>
+        <a
+          (click)="registerToggle()"
+          class="btn btn-danger text-light my-2 mr-2"
+          >Register</a
+        >
+        <a class="btn btn-secondary my-2 text-light">Learn More</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<div *ngIf="registerMode" class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <app-register
+        (cancelRegister)="cancelRegisterMode($event)"
+      ></app-register>
+    </div>
+  </div>
+</div>
